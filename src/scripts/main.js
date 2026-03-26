@@ -38,13 +38,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Back to Top Button Logic
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
-        if(window.ScrollTrigger) {
-            // Show/Hide button when reaching the footer
+        if(window.gsap && window.ScrollTrigger) {
+            // Synchronized with footer reveal (starts at top bottom)
             ScrollTrigger.create({
                 trigger: ".footer",
-                start: "top 80%",
+                start: "top bottom",
                 onEnter: () => backToTop.classList.add('visible'),
                 onLeaveBack: () => backToTop.classList.remove('visible')
+            });
+        } else {
+            // Fallback scroll listener focused on footer
+            window.addEventListener('scroll', () => {
+                const footer = document.querySelector('.footer');
+                if (footer) {
+                    const rect = footer.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                }
             });
         }
 

@@ -16,9 +16,9 @@
     font-family: var(--font-primary, "Poppins", sans-serif);
     font-size: 10vw;
     font-weight: 700;
+    color: #F2F2F2; /* Fallback color */
     background: linear-gradient(-30deg, #F2F2F2, #b6b6b6);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
 }
