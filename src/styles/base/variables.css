@@ -1,0 +1,11 @@
+:root {
+    --color-primary: #0D0D0D;
+    --color-background-start: #F2F2F2;
+    --color-background-end: #888888;
+    --color-text-light: #535353;
+    --font-primary: "Poppins", sans-serif;
+    --font-secondary: "Space Mono", sans-serif;
+    --transition-slow: 0.6s ease;
+    --transition-medium: 0.4s ease;
+    --transition-fast: 0.3s ease;
+}

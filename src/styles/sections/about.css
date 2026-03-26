@@ -1,0 +1,51 @@
+/* --- ABOUT --- */
+.section-about {
+    width: 100%;
+    height: 100vh;
+    padding: 24px 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-about .section-title {
+    padding-bottom: 68px;
+}
+
+.section-about__content p:nth-child(1) {
+    font-size: 2.4vw;
+    font-weight: 700;
+    color: #0D0D0D;
+}
+
+.section-about__content p:nth-child(2) {
+    color: #535353;
+    font-size: 1.8vw;
+    padding-top: 38px;
+    padding-bottom: 36px;
+}
+
+@media (max-width: 1024px) {
+    .section-about__content p:nth-child(1) {
+        font-size: 3.5vw;
+    }
+
+    .section-about__content p:nth-child(2) {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 440px) {
+    .section-about {
+        height: auto;
+        padding: 60px 4vw;
+    }
+
+    .section-about__content p:nth-child(1) {
+        font-size: 6vw;
+    }
+
+    .section-about__content p:nth-child(2) {
+        font-size: 4vw;
+    }
+}

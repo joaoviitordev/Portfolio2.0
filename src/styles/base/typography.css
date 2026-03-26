@@ -1,0 +1,16 @@
+.section-title {
+    font-family: var(--font-secondary);
+    color: var(--color-primary);
+}
+
+.link-hover {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.link-hover:hover {
+    background: linear-gradient(-30deg, var(--color-background-start), #b6b6b6);
+    -webkit-background-clip: text;
+    color: transparent;
+}

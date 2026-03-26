@@ -1,0 +1,26 @@
+/* --- PROJECTS --- */
+.section-projects {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-projects .section-title {
+    width: 100%;
+    align-self: flex-start;
+    padding: 0 4vw;
+    margin-top: 24px;
+}
+
+@media (max-width: 440px) {
+    .section-projects {
+        padding: 24px 4vw;
+    }
+
+    .section-projects .section-title {
+        padding: 24px 1vw;
+        margin: 0;
+    }
+}

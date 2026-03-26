@@ -1,0 +1,26 @@
+/* --- TECNOLOGIAS --- */
+.section-tecnologias {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 4vw;
+}
+
+.section-tecnologias .section-title {
+    width: 100%;
+    align-self: flex-start;
+    margin-bottom: 48px;
+}
+
+@media (max-width: 440px) {
+    .section-tecnologias {
+        padding: 40px 4vw;
+        min-height: auto;
+    }
+
+    .section-tecnologias .section-title {
+        margin-bottom: 32px;
+    }
+}

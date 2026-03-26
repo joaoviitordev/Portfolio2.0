@@ -1,0 +1,24 @@
+/* --- PRELOADER --- */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #0D0D0D;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader__counter {
+    font-family: var(--font-primary, "Poppins", sans-serif);
+    font-size: 10vw;
+    font-weight: 700;
+    background: linear-gradient(-30deg, #F2F2F2, #b6b6b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}

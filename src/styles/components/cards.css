@@ -1,0 +1,236 @@
+/* Project and Tech Cards */
+.project-card {
+    width: 100%;
+    max-width: 1100px;
+    margin: 64px auto;
+    border-radius: 24px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.project-card__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+}
+
+.project-card__header a {
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.project-card__title {
+    font-family: var(--font-primary, "Poppins", sans-serif);
+    font-size: 20px;
+    color: #0D0D0D;
+    font-weight: 500;
+}
+
+.project-card__preview {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* In paths relative to main.css */
+.project-card__preview--stranger-things {
+    background-image: url("../../assets/images/strangerThings.webp");
+}
+
+.project-card__preview--pringles {
+    background-image: url("../../assets/images/pringles.webp");
+}
+
+.tech-grid {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 24px;
+    justify-content: center;
+    grid-auto-flow: dense;
+}
+
+.tech-card--large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.tech-card--large .tech-card__icon {
+    width: 140px;
+    height: 140px;
+}
+
+.tech-card--large .tech-card__name {
+    font-size: 26px;
+}
+
+.tech-card--tall {
+    grid-row: span 2;
+}
+
+.tech-card--tall .tech-card__icon {
+    width: 100px;
+    height: 100px;
+}
+
+.tech-card--tall .tech-card__name {
+    font-size: 22px;
+}
+
+.tech-card--wide {
+    grid-column: span 2;
+}
+
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 32px 24px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.tech-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.tech-card__icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.tech-card__name {
+    font-family: var(--font-primary, "Poppins", sans-serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: #0D0D0D;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .project-card {
+        max-width: 90%;
+    }
+
+    .project-card__preview {
+        height: 450px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+        gap: 20px;
+    }
+
+    .tech-card {
+        padding: 24px 20px;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .tech-card__icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tech-card__name {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 440px) {
+    .project-card {
+        margin: 24px auto;
+    }
+
+    .project-card__preview {
+        width: 100%;
+        height: 220px;
+    }
+
+    .project-card__title {
+        font-size: 16px;
+    }
+
+    .project-card__header {
+        padding: 16px 20px;
+    }
+
+    .project-card__header a {
+        font-size: 28px;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+        gap: 16px;
+    }
+
+    .tech-card--large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .tech-card--large .tech-card__icon,
+    .tech-card--tall .tech-card__icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tech-card--large .tech-card__name,
+    .tech-card--tall .tech-card__name {
+        font-size: 18px;
+    }
+
+    .tech-card--tall {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .tech-card--wide {
+        grid-column: span 2;
+    }
+
+    .tech-card {
+        padding: 24px 16px;
+        gap: 16px;
+        border-radius: 16px;
+    }
+
+    .tech-card__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tech-card__name {
+        font-size: 16px;
+    }
+}
