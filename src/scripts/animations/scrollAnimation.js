@@ -68,14 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Footer ScrollTrigger Animation
-    gsap.from("footer", {
-        yPercent: -50,
-        ease: "none",
-        scrollTrigger: {
-            trigger: "footer",
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true
-        }
-    });
+    // gsap.from("footer", {
+    //     yPercent: -50,
+    //     ease: "none",
+    //     scrollTrigger: {
+    //         trigger: "footer",
+    //         start: "top bottom",
+    //         end: "bottom bottom",
+    //         scrub: true
+    //     }
+    // });
 });

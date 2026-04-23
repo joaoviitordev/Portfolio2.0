@@ -59,6 +59,10 @@
     background-image: url("../../assets/images/doutoragenda.webp");
 }
 
+.project-card__preview--agencia {
+    background-image: url("../../assets/images/agencia.webp");
+}
+
 .tech-grid {
     width: 100%;
     max-width: 1100px;
