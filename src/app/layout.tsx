@@ -41,6 +41,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        {/* GSAP CDNs Originais para garantir acesso ao ScrollSmoother e SplitText */}
+        <Script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollTrigger.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollSmoother.min.js" strategy="beforeInteractive" />
+        <Script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/SplitText.min.js" strategy="beforeInteractive" />
       </head>
       <body>{children}</body>
     </html>

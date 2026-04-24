@@ -1,65 +1,101 @@
-import Image from "next/image";
+"use client";
+import React, { useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+// Importação dos Componentes
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Projects from '@/components/sections/Projects';
+import Technologies from '@/components/sections/Technologies';
+import Preloader from '@/components/ui/Preloader';
+
+// Registrar plugins do GSAP nativos
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Home() {
+  
+  // Implementação do ScrollSmoother global para se manter fiel ao código original
+  useGSAP(() => {
+    // Registramos via window porque adicionamos os CDNs em layout.tsx para os plugins pagos/gratuitos originais
+    const win = window as any;
+    if (win.gsap && win.ScrollSmoother) {
+      win.gsap.registerPlugin(win.ScrollSmoother);
+      win.smoother = win.ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 1.5,
+        effects: true,
+        smoothTouch: 0.1
+      });
+    }
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Preloader />
+      
+      <div id="smooth-wrapper" className="w-full overflow-hidden">
+        <div id="smooth-content" className="w-full">
+          <Header />
+          <main>
+            <Hero />
+            <About />
+            <Projects />
+            <Technologies />
+          </main>
+          <Footer />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+      
+      <BackToTop />
+    </>
+  );
+}
+
+// Subcomponente do botão Back To Top
+function BackToTop() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: "#contato",
+      start: "top bottom",
+      onEnter: () => setIsVisible(true),
+      onLeaveBack: () => setIsVisible(false)
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    const win = window as any;
+    if (win.smoother) {
+      win.smoother.scrollTo("#hero", true);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <button 
+      id="backToTop"
+      onClick={scrollToTop}
+      className={`
+        fixed bottom-[30px] sm:bottom-[80px] right-[20px] sm:right-[65px] 
+        w-[50px] sm:w-[60px] h-[50px] sm:h-[60px] 
+        bg-gradient-to-br from-[#F2F2F2] to-[#888888] 
+        text-[#0D0D0D] text-[20px] sm:text-[24px] 
+        rounded-full flex items-center justify-center 
+        shadow-[0_4px_15px_rgba(0,0,0,0.2)] z-[3000] cursor-pointer
+        transition-all duration-400 ease-in-out
+        hover:scale-110 hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)]
+        active:scale-90
+        ${isVisible ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-5'}
+      `}
+    >
+      <i className="fas fa-arrow-up"></i>
+    </button>
   );
 }
