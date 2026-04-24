@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header className="w-full flex justify-between items-center px-[4vw] py-6 absolute z-50">
-      <h2 className="font-mono text-base md:text-lg w-full sm:w-auto leading-tight">
+      <h2 className="font-mono font-bold text-2xl">
         /* DESENVOLVEDOR <br /> FRONT END */
       </h2>
       
@@ -38,10 +38,10 @@ export default function Header() {
         ${isOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 -translate-y-5 pointer-events-none sm:pointer-events-auto'}
       `}>
         <ul className="flex flex-col gap-4 p-5 px-[4vw] sm:flex-row sm:gap-8 sm:p-0">
-          <li><Link href="#projetos" className="header-link font-medium hover:opacity-70 transition-opacity" onClick={() => setIsOpen(false)}>PROJETOS</Link></li>
-          <li><Link href="#sobre" className="header-link font-medium hover:opacity-70 transition-opacity" onClick={() => setIsOpen(false)}>SOBRE</Link></li>
-          <li><Link href="#tecnologias" className="header-link font-medium hover:opacity-70 transition-opacity" onClick={() => setIsOpen(false)}>TECNOLOGIAS</Link></li>
-          <li><Link href="#contato" className="header-link font-medium hover:opacity-70 transition-opacity" onClick={() => setIsOpen(false)}>CONTATO</Link></li>
+          <li><Link href="#projetos" className="header-link font-medium hover:color-link-hover" onClick={() => setIsOpen(false)}>PROJETOS</Link></li>
+          <li><Link href="#sobre" className="header-link font-medium hover:color-link-hover" onClick={() => setIsOpen(false)}>SOBRE</Link></li>
+          <li><Link href="#tecnologias" className="header-link font-medium hover:color-link-hover" onClick={() => setIsOpen(false)}>TECNOLOGIAS</Link></li>
+          <li><Link href="#contato" className="header-link font-medium hover:color-link-hover" onClick={() => setIsOpen(false)}>CONTATO</Link></li>
         </ul>
       </nav>
     </header>

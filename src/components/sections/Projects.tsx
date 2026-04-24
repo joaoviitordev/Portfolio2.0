@@ -5,22 +5,22 @@ export default function Projects() {
     {
       title: "Landing Page - Stranger Things",
       url: "https://joaoviitordev.github.io/Landing-Page-StrangerThings/",
-      img: "../public/images/strangerThings.webp"
+      img: "/assets/images/strangerThings.webp"
     },
     {
       title: "Landing Page - Pringles",
       url: "https://joaoviitordev.github.io/Landing-Page-Pringles/",
-      img: "../public/images/pringles.webp"
+      img: "/assets/images/pringles.webp"
     },
     {
       title: "SaaS - Doutor Agenda",
       url: "#",
-      img: "../public/images/doutoragenda.webp"
+      img: "/assets/images/doutoragenda.webp"
     },
     {
       title: "Landing Page - Agência 3D",
       url: "https://joaoviitordev.github.io/Agencia3D/",
-      img: "/public/images/agencia.webp"
+      img: "/assets/images/agencia.webp"
     }
   ];
 
