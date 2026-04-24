@@ -5,10 +5,10 @@ export default function Hero() {
     <section id="hero" className="w-full h-screen flex flex-col items-center justify-between">
       {/* Container flex com width expandido para caber todo o texto do letreiro */}
       <div className="flex-1 overflow-hidden w-full flex items-center">
-        <div className="h-full w-max flex items-center justify-center animate-[marquee-anim_30s_infinite_linear]">
-          <h1 className="font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</h1>
-          <h1 className="font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</h1>
-          <h1 className="font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</h1>
+        <div className="h-full w-max flex items-center justify-center">
+          <h1 className="animate-[marquee-anim_20s_infinite_linear] font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</h1>
+          <h1 className="animate-[marquee-anim_20s_infinite_linear] font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</h1>
+          <h1 className="animate-[marquee-anim_20s_infinite_linear] font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</h1>
         </div>
       </div>
       

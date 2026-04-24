@@ -3,7 +3,7 @@ import React from 'react';
 export default function About() {
   return (
     <section id="sobre" className="w-full h-auto sm:h-screen px-[4vw] py-[60px] sm:py-[24px] flex flex-col justify-center">
-      <h3 className="font-mono text-[var(--color-primary)] text-xl sm:text-3xl font-bold pb-[68px]">
+      <h3 className="font-mono text-[var(--color-primary)] text-2xl sm:text-2xl font-bold pb-[68px]">
         /* SOBRE MIM */
       </h3>
       <article className="flex flex-col items-start">

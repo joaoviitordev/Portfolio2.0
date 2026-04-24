@@ -26,7 +26,7 @@ export default function Projects() {
 
   return (
     <section id="projetos" className="w-full min-h-screen flex flex-col items-center px-[4vw] py-[24px] sm:py-0">
-      <h3 className="font-mono text-[var(--color-primary)] text-xl sm:text-3xl font-bold w-full text-left mt-0 sm:mt-[24px]">
+      <h3 className="font-mono text-[var(--color-primary)] text-xl sm:text-2xl font-bold w-full text-left mt-0 sm:mt-[24px]">
         /* PROJETOS */
       </h3>
       

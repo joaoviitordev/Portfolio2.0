@@ -57,7 +57,7 @@ export default function Preloader() {
       ref={preloaderRef} 
       className="fixed inset-0 z-[9999] bg-[#0D0D0D] flex items-center justify-center pointer-events-none"
     >
-      <span className="font-mono text-4xl sm:text-6xl text-[#F2F2F2] font-bold">
+      <span className="font-mono text-4xl sm:text-9xl text-[#F2F2F2] font-bold">
         {progress}%
       </span>
     </div>

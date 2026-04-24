@@ -47,7 +47,7 @@ export default function RootLayout({
         <Script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/ScrollSmoother.min.js" strategy="beforeInteractive" />
         <Script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/SplitText.min.js" strategy="beforeInteractive" />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
