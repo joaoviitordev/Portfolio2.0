@@ -18,10 +18,23 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfólio | João Vitor",
-  description: "Portfólio de João Vitor Gomes de Faria, Desenvolvedor Front-End",
+  title: "João Vitor | Desenvolvedor Front-end Next.js & UI/UX",
+  description: "Desenvolvedor Front-end especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance. Veja meus cases.",
   icons: {
     icon: "/favicon/myfavicon.svg",
+  },
+  openGraph: {
+    title: "João Vitor | Desenvolvedor Front-end Next.js & UI/UX",
+    description: "Desenvolvedor Front-end especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance. Veja meus cases.",
+    url: "https://www.joaoviitordev.com.br",
+    siteName: "João Vitor Portfólio",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "João Vitor | Desenvolvedor Front-end Next.js & UI/UX",
+    description: "Desenvolvedor Front-end especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance.",
   },
 };
 
