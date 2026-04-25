@@ -15,9 +15,9 @@ export default function Technologies() {
 
   return (
     <section id="tecnologias" className="w-full min-h-auto sm:min-h-screen flex flex-col items-center px-[4vw] py-[40px] sm:py-[100px]">
-      <h3 className="font-mono text-[var(--color-primary)] text-xl sm:text-2xl font-bold w-full text-left mb-[32px] sm:mb-[48px]">
+      <h2 className="font-mono text-[var(--color-primary)] text-xl sm:text-2xl font-bold w-full text-left mb-[32px] sm:mb-[48px]">
         /* TECNOLOGIAS */
-      </h3>
+      </h2>
       
       <div className="w-full max-w-[1100px] grid grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-4 sm:gap-6 auto-rows-[150px] sm:auto-rows-[200px] lg:auto-rows-[240px]">
         {techs.map((tech, index) => {
@@ -56,7 +56,8 @@ export default function Technologies() {
             >
               <img 
                 src={tech.icon} 
-                alt={tech.name} 
+                alt={`Ícone da tecnologia ${tech.name}`} 
+                loading="lazy"
                 className={`${iconSize} object-contain drop-shadow-md`} 
               />
               <span className={`font-sans font-semibold text-[#0D0D0D] text-center ${textSize}`}>
