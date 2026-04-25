@@ -1,4 +1,5 @@
-import React from 'react';
+// import React from 'react';
+import Image from 'next/image';
 
 export default function Projects() {
   const projects = [
@@ -60,10 +61,15 @@ export default function Projects() {
               {proj.description}
             </p>
             
-            <div 
-              className="relative w-full h-[220px] sm:h-[450px] lg:h-[600px] bg-cover bg-center bg-no-repeat" 
-              style={{ backgroundImage: `url(${proj.img})` }}
-            >
+            <div className="relative w-full h-[220px] sm:h-[450px] lg:h-[600px] overflow-hidden">
+              <Image 
+                src={proj.img} 
+                alt={`Captura de tela do projeto ${proj.title}`}
+                fill
+                priority={idx === 0}
+                className="object-cover object-center"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1100px"
+              />
             </div>
           </article>
         ))}
