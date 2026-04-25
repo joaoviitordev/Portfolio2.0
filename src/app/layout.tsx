@@ -18,13 +18,13 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "João Vitor | Desenvolvedor Front-end Next.js & UI/UX",
+  title: "João Vitor | Desenvolvedor Front-end & UI/UX",
   description: "Desenvolvedor Front-end especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance. Veja meus cases.",
   icons: {
     icon: "/favicon/myfavicon.svg",
   },
   openGraph: {
-    title: "João Vitor | Desenvolvedor Front-end Next.js & UI/UX",
+    title: "João Vitor | Desenvolvedor Front-end & UI/UX",
     description: "Desenvolvedor Front-end especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance. Veja meus cases.",
     url: "https://www.joaoviitordev.com.br",
     siteName: "João Vitor Portfólio",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "João Vitor | Desenvolvedor Front-end Next.js & UI/UX",
+    title: "João Vitor | Desenvolvedor Front-end & UI/UX",
     description: "Desenvolvedor Front-end especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance.",
   },
 };

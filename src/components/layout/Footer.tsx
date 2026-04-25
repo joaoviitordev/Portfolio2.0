@@ -21,16 +21,16 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="px-[3.4vw] mb-4 sm:mb-5 flex gap-4 text-3xl">
-            <a href="https://www.linkedin.com/in/joaovitor-faria/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn" className="hover:opacity-70 transition-opacity">
+          <div className="px-[3.4vw] mb-4 sm:mb-5 flex gap-4 items-start sm:items-center">
+            <a href="https://www.linkedin.com/in/joaovitor-faria/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn" className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]">
               <i className="fab fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="https://github.com/joaoviitordev" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no GitHub" className="hover:opacity-70 transition-opacity">
+            <a href="https://github.com/joaoviitordev" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no GitHub" className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]">
               <i className="fab fa-github" aria-hidden="true"></i>
             </a>
           </div>
 
-          <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center px-[4vw] pb-6 sm:pb-8 gap-3 sm:gap-0 sm:transform-none -translate-y-4 sm:translate-y-0">
+          <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center px-[3.6vw] pb-6 sm:pb-8 gap-3 sm:gap-0 sm:transform-none -translate-y-4 sm:translate-y-0">
             <p className="font-mono font-bold text-[18px] sm:text-[1.4vw] lg:text-[1.2vw] m-0">E-mail: joaovitorgomesdefaria@gmail.com</p>
             <p className="font-mono font-bold text-[18px] sm:text-[1.4vw] lg:text-[1.2vw] m-0">/* KEEP PUSHING THE LIMITS */</p>
           </div>

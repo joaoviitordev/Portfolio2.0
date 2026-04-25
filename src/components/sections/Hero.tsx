@@ -21,7 +21,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/joaovitor-faria/" 
             target="_blank" 
             rel="nofollow noreferrer"
-            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:color-link-hover"
+            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]"
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -29,7 +29,7 @@ export default function Hero() {
             href="https://github.com/joaoviitordev" 
             target="_blank" 
             rel="nofollow noreferrer"
-            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:opacity-70 transition-opacity duration-300"
+            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]"
           >
             <i className="fab fa-github"></i>
           </a>
