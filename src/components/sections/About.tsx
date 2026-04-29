@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function About() {
   return (
     <section id="sobre" className="w-full h-auto sm:h-screen px-[4vw] py-[60px] sm:py-[24px] flex flex-col justify-center">
@@ -16,7 +14,7 @@ export default function About() {
         </p>
         <button className="w-[140px] h-[50px] rounded-[30px] border-none bg-gradient-to-br from-[#F2F2F2] to-[#888888] hover:-translate-y-[5%] transition-transform duration-500 ease-out">
           <a 
-            href="/doc/curriculo-joaovitor.pdf" 
+            href="/doc/joaovitorcurriculo.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="flex items-center justify-center w-full h-full text-[var(--color-primary)] text-[16px] hover:font-medium transition-all"

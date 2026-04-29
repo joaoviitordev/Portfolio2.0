@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portfolio 2.0 | João Vitor
 
-## Getting Started
+Bem-vindo ao repositório da versão 2.0 do meu portfólio pessoal. Este projeto representa a evolução da minha identidade digital, focando em uma interface de alto impacto visual e performance técnica refinada.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔗 Acesse o Projeto
+O portfólio está publicado e pode ser visualizado no link abaixo:
+* 👉 **https://www.joaoviitordev.com.br/**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deixo também a versão 1.0 que é o meu primeiro portfólio:
+* 👉 **https://joaoviitordev.github.io/Portfolio1.0/**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎨 Design & Prototipação
 
-## Learn More
+A construção deste portfólio seguiu um fluxo de design profissional, garantindo consistência antes da implementação.
 
-To learn more about Next.js, take a look at the following resources:
+* **Figma:** Toda a interface foi rigorosamente prototipada no Figma. O processo incluiu a criação de um *design system* próprio, definição de paleta de cores, tipografia e o mapeamento de interações de usuário.
+* **Conceitos Aplicados:** 
+    * **Bento Grid:** Layout modular e organizado, inspirado em tendências modernas de UI.
+    * **Glassmorphism:** Estética baseada em transparências e desfoque de fundo (backdrop-filter).
+    * **UX/UI Design:** Foco total na usabilidade e em uma hierarquia visual clara.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Stack Tecnológica
 
-## Deploy on Vercel
+### **Front-end & Core**
+* **HTML5 / CSS3:** Estrutura semântica e estilização avançada com foco em responsividade.
+* **JavaScript (ES6+):** Lógica para manipulação de componentes e interatividade.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Animações & Experiência (Engine)**
+* **GSAP (GreenSock Animation Platform):** Utilizado como motor principal para orquestrar animações complexas.
+* **ScrollTrigger:** Para criar gatilhos de animação baseados na rolagem da página.
+* **ScrollSmoother:** Implementado para garantir uma navegação fluida e uma experiência de usuário premium.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ✨ Funcionalidades Principais
+
+- [x] **Interface Responsiva:** Design otimizado para mobile, tablets e desktops.
+- [x] **Scroll Fluido:** Experiência de navegação suave e moderna.
+- [x] **Projetos em Destaque:** Exibição dinâmica de trabalhos em formato de grid.
+- [x] **Tech Stack:** Seção visual detalhando as tecnologias dominadas.
+- [x] **Design de Alta Fidelidade:** Fiel ao protótipo desenvolvido no Figma.
+
+---
+
+## 🛠️ Futuras Atualizações (Roadmap)
+
+O projeto continua em evolução. Algumas das melhorias planejadas incluem:
+
+* **Dark/Light Mode:** Implementação de um seletor de temas dinâmico.
+* **Suporte para múltiplos idiomas (Português/Inglês).** 
+* **Novos Projetos.**
+
+---
+
+## 👨‍💻 Sobre Mim
+
+Sou um desenvolvedor Front-end que acredita que o código e o design devem caminhar juntos. Especialista em transformar ideias prototipadas no Figma em interfaces vivas, utilizando ferramentas modernas de animação para criar experiências memoráveis na web.
+
+---
+
+## 📬 Contato
+
+* **GitHub:** https://github.com/joaoviitordev
+* **LinkedIn:** https://www.linkedin.com/in/joaovitor-faria/
+* **Email:** joaovitorgomesdefaria@gmail.com
+
+---
+*Desenvolvido com ☕ e muito foco em UI/UX por João Vitor.*

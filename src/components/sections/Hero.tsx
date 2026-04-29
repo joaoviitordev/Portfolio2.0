@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Hero() {
   return (
     <section id="hero" className="w-full h-screen flex flex-col items-center justify-between">
@@ -21,7 +19,7 @@ export default function Hero() {
             href="https://www.linkedin.com/in/joaovitor-faria/" 
             target="_blank" 
             rel="nofollow noreferrer"
-            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]"
+            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300"
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -29,7 +27,7 @@ export default function Hero() {
             href="https://github.com/joaoviitordev" 
             target="_blank" 
             rel="nofollow noreferrer"
-            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]"
+            className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300"
           >
             <i className="fab fa-github"></i>
           </a>

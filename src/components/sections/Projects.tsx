@@ -18,7 +18,7 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
-      title: "Landing Page - Stranger Things",
+      title: "Stranger Things",
       url: "https://joaoviitordev.github.io/Landing-Page-StrangerThings/",
       repo: "https://github.com/joaoviitordev/Landing-Page-StrangerThings",
       img: "/assets/images/strangerThings.webp",
@@ -33,7 +33,7 @@ export default function Projects() {
       ],
     },
     {
-      title: "Landing Page - Pringles",
+      title: "Pringles",
       url: "https://joaoviitordev.github.io/Landing-Page-Pringles/",
       repo: "https://github.com/joaoviitordev/Landing-Page-Pringles",
       img: "/assets/images/pringles.webp",
@@ -48,7 +48,7 @@ export default function Projects() {
       ],
     },
     {
-      title: "SaaS - Doutor Agenda",
+      title: "Doutor Agenda",
       url: "https://doutor-agenda-indol.vercel.app/",
       repo: "https://github.com/joaoviitordev/doutor-agenda",
       img: "/assets/images/doutoragenda.webp",
@@ -64,7 +64,7 @@ export default function Projects() {
       ],
     },
     {
-      title: "Landing Page - Agência 3D",
+      title: "Agência 3D",
       url: "https://joaoviitordev.github.io/Agencia3D/",
       repo: "https://github.com/joaoviitordev/Agencia3D",
       img: "/assets/images/agencia.webp",

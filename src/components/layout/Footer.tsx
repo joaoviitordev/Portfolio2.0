@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Footer() {
   return (
     <div className="w-full overflow-hidden">
@@ -9,7 +7,7 @@ export default function Footer() {
           <div className="w-full flex flex-row justify-between items-center px-[4vw] pt-6 sm:pt-[100px] gap-2 sm:gap-0">
             <h2 className="font-mono text-xl sm:text-2xl font-bold">/* CONTATO */</h2>
             <button className="w-[140px] h-[50px] rounded-[30px] border-none bg-gradient-to-br from-[#F2F2F2] to-[#888888] hover:-translate-y-[5%] transition-transform duration-500 ease-out">
-              <a href="/doc/curriculo-joaovitor.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full text-[var(--color-primary)] text-[16px] hover:font-medium transition-all">CURRÍCULO</a>
+              <a href="/doc/joaovitorcurriculo.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full text-[var(--color-primary)] text-[16px] hover:font-medium transition-all">CURRÍCULO</a>
             </button>
           </div>
 
@@ -22,10 +20,10 @@ export default function Footer() {
           </div>
 
           <div className="px-[3.4vw] mb-4 sm:mb-5 flex gap-4 items-start sm:items-center">
-            <a href="https://www.linkedin.com/in/joaovitor-faria/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn" className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]">
+            <a href="https://www.linkedin.com/in/joaovitor-faria/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn" className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300">
               <i className="fab fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="https://github.com/joaoviitordev" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no GitHub" className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)]">
+            <a href="https://github.com/joaoviitordev" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no GitHub" className="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300">
               <i className="fab fa-github" aria-hidden="true"></i>
             </a>
           </div>

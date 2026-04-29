@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Technologies() {
   const techs = [
     { name: 'HTML5', icon: '/assets/icons/html5.svg', size: 'normal' },

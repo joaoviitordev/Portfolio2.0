@@ -1,6 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -70,10 +69,10 @@ export default function Header() {
         ${isOpen ? 'visible opacity-100 pointer-events-auto' : 'invisible opacity-0 pointer-events-none sm:pointer-events-auto'}
       `}>
         <ul className="flex flex-col items-center justify-center gap-8 text-2xl sm:text-base sm:flex-row sm:gap-8 sm:p-0">
-          <li><a href="#projetos" className="header-link font-medium hover:color-link-hover" onClick={(e) => handleNavClick(e, '#projetos')}>PROJETOS</a></li>
-          <li><a href="#sobre" className="header-link font-medium hover:color-link-hover" onClick={(e) => handleNavClick(e, '#sobre')}>SOBRE</a></li>
-          <li><a href="#tecnologias" className="header-link font-medium hover:color-link-hover" onClick={(e) => handleNavClick(e, '#tecnologias')}>TECNOLOGIAS</a></li>
-          <li><a href="#contato" className="header-link font-medium hover:color-link-hover" onClick={(e) => handleNavClick(e, '#contato')}>CONTATO</a></li>
+          <li><a href="#projetos" className="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300" onClick={(e) => handleNavClick(e, '#projetos')}>PROJETOS</a></li>
+          <li><a href="#sobre" className="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300" onClick={(e) => handleNavClick(e, '#sobre')}>SOBRE</a></li>
+          <li><a href="#tecnologias" className="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300" onClick={(e) => handleNavClick(e, '#tecnologias')}>TECNOLOGIAS</a></li>
+          <li><a href="#contato" className="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300" onClick={(e) => handleNavClick(e, '#contato')}>CONTATO</a></li>
         </ul>
       </nav>
     </header>
