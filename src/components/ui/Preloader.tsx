@@ -47,7 +47,7 @@ export default function Preloader() {
       countingTween.kill();
       let tl = gsap.timeline();
       hidePreloader(tl);
-    }, 1500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -55,7 +55,7 @@ export default function Preloader() {
   return (
     <div 
       ref={preloaderRef} 
-      className="fixed inset-0 z-[9999] bg-[#0D0D0D] flex items-center justify-center pointer-events-none"
+      className="fixed inset-0 z-9999 bg-[#0D0D0D] flex items-center justify-center pointer-events-none"
     >
       <span className="font-mono text-4xl sm:text-9xl text-[#F2F2F2] font-bold">
         {progress}%

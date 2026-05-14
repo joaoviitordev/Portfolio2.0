@@ -79,6 +79,21 @@ export default function Projects() {
         { name: "Figma", icon: "/assets/icons/figma.svg" },
       ],
     },
+    {
+      title: "Super Mario Galaxy",
+      url: "https://joaoviitordev.github.io/SuperMarioGalaxy/",
+      repo: "https://github.com/joaoviitordev/SuperMarioGalaxy",
+      img: "/assets/images/superMario.webp",
+      description:
+        "Landing page conceitual e animada inspirada no universo Super Mario Galaxy, simulando o site oficial de um filme fictício com visual imersivo, animações avançadas de scroll e efeitos visuais galáticos. Para saber mais sobre as tecnologias utilizadas, acesse o repositório do projeto.",
+      techs: [
+        { name: "HTML5", icon: "/assets/icons/html5.svg" },
+        { name: "CSS3", icon: "/assets/icons/css3.svg" },
+        { name: "JavaScript", icon: "/assets/icons/js.svg" },
+        { name: "GSAP", icon: "/assets/icons/gsap2.svg" },
+        { name: "Figma", icon: "/assets/icons/figma.svg" },
+      ],
+    },
   ];
 
   // Projeto ativo para o modal
@@ -99,7 +114,7 @@ export default function Projects() {
 
   // Trava o scroll do body e pausa o ScrollSmoother
   useEffect(() => {
-    const win = window as any;
+    const win = window as unknown as { smoother?: { paused: (p: boolean) => void } };
     if (activeIdx !== null) {
       document.body.style.overflow = "hidden";
       if (win.smoother) win.smoother.paused(true);
@@ -119,14 +134,14 @@ export default function Projects() {
       {/* Botão fechar */}
       <button
         onClick={handleClose}
-        className="absolute top-4 right-5 text-[var(--color-primary)] text-xl font-bold cursor-pointer bg-transparent border-none hover:opacity-60 transition-opacity duration-200"
+        className="absolute top-4 right-5 text-primary text-xl font-bold cursor-pointer bg-transparent border-none hover:opacity-60 transition-opacity duration-200"
         aria-label="Fechar modal"
       >
         ✕
       </button>
 
       {/* Título */}
-      <h4 className="font-mono text-lg sm:text-xl font-bold text-[var(--color-primary)] pr-8 mb-4">
+      <h4 className="font-mono text-lg sm:text-xl font-bold text-primary pr-8 mb-4">
         {proj.title}
       </h4>
 
@@ -138,12 +153,14 @@ export default function Projects() {
             className="flex items-center gap-1.5 px-2.5 py-1 rounded-[10px] bg-white/50 border border-white/40"
             title={tech.name}
           >
-            <img
+            <Image
               src={tech.icon}
               alt={tech.name}
+              width={20}
+              height={20}
               className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] object-contain"
             />
-            <span className="font-sans text-xs sm:text-sm text-[var(--color-primary)] font-medium">
+            <span className="font-sans text-xs sm:text-sm text-primary font-medium">
               {tech.name}
             </span>
           </div>
@@ -151,10 +168,10 @@ export default function Projects() {
       </div>
 
       {/* Divisor */}
-      <div className="w-12 h-[2px] bg-[var(--color-primary)] opacity-30 mb-5" />
+      <div className="w-12 h-[2px] bg-primary opacity-30 mb-5" />
 
       {/* Descrição */}
-      <p className="font-sans text-sm sm:text-base text-[var(--color-text-light)] leading-relaxed mb-8">
+      <p className="font-sans text-sm sm:text-base text-text-light leading-relaxed mb-8">
         {proj.description}
       </p>
 
@@ -164,7 +181,7 @@ export default function Projects() {
           href={proj.repo}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[14px] bg-[var(--color-primary)] text-white font-sans text-sm font-medium no-underline transition-all duration-300 hover:opacity-85 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+          className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[14px] bg-primary text-white font-sans text-sm font-medium no-underline transition-all duration-300 hover:opacity-85 hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
         >
           <i className="fab fa-github" aria-hidden="true" />
           Repositório
@@ -174,7 +191,7 @@ export default function Projects() {
             href={proj.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[14px] border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-sans text-sm font-medium no-underline transition-all duration-300 hover:bg-[var(--color-primary)] hover:text-white hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
+            className="flex-1 flex items-center justify-center gap-2 px-5 py-3 rounded-[14px] border-2 border-primary text-primary font-sans text-sm font-medium no-underline transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
           >
             <i className="fas fa-external-link-alt" aria-hidden="true" />
             Ver Deploy
@@ -190,26 +207,26 @@ export default function Projects() {
         id="projetos"
         className="w-full min-h-screen flex flex-col items-center px-[4vw] py-[24px] sm:py-0"
       >
-        <h2 className="font-mono text-[var(--color-primary)] text-xl sm:text-2xl font-bold w-full text-left mt-0 sm:mt-[24px]">
-          /* PROJETOS */
+        <h2 className="font-mono text-primary text-xl sm:text-2xl font-bold w-full text-left mt-0 sm:mt-[24px]">
+          {"/* PROJETOS */"}
         </h2>
 
         <div className="w-full max-w-[1100px] mt-6 sm:mt-16 flex flex-col gap-6 sm:gap-16">
           {projects.map((proj, idx) => (
             <article
               key={idx}
-              className="relative w-full rounded-[24px] shadow-[0_20px_70px_rgba(0,0,0,0.35)] bg-white/5 overflow-hidden transition-all duration-400 ease-in hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]"
+              className="relative w-full rounded-[24px] shadow-[0_20px_70px_rgba(0,0,0,0.35)] bg-white/5 overflow-hidden transition-all duration-medium ease-in hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]"
             >
               {/* Cabeçalho do card */}
               <div className="w-full flex items-center justify-between p-4 sm:px-6 sm:py-5">
-                <h3 className="font-sans text-base sm:text-xl text-[var(--color-primary)] font-medium m-0 p-0">
+                <h3 className="font-sans text-base sm:text-xl text-primary font-medium m-0 p-0">
                   {proj.title}
                 </h3>
                 <button
                   onClick={() => setActiveIdx(idx)}
-                  className="font-mono text-sm sm:text-base text-[var(--color-primary)] font-bold cursor-pointer bg-transparent border-none relative group flex items-center gap-1"
+                  className="font-mono text-sm sm:text-base text-primary font-bold cursor-pointer bg-transparent border-none relative group flex items-center gap-1"
                 >
-                  <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[var(--color-primary)] after:transition-all after:duration-300 group-hover:after:w-full">
+                  <span className="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
                     Saiba mais
                   </span>
                   <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
@@ -244,8 +261,8 @@ export default function Projects() {
           {/* Mobile: fullscreen como o menu hamburger */}
           <div
             className={`
-              fixed inset-0 z-[9999] w-full h-screen
-              bg-[#F2F2F2] bg-gradient-to-br from-[#F2F2F2] to-[#888888]
+              fixed inset-0 z-9999 w-full h-screen
+              bg-[#F2F2F2] bg-linear-to-br from-[#F2F2F2] to-background-end
               flex flex-col items-center justify-center
               sm:hidden
               ${modalIsClosing ? "modal-backdrop-exit" : "modal-backdrop-enter"}
@@ -266,7 +283,7 @@ export default function Projects() {
           <div
             className={`
               hidden sm:flex
-              fixed inset-0 z-[9999] items-center justify-center p-4
+              fixed inset-0 z-9999 items-center justify-center p-4
               ${modalIsClosing ? "modal-backdrop-exit" : "modal-backdrop-enter"}
             `}
             onClick={handleClose}

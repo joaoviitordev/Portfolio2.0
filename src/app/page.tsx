@@ -72,7 +72,7 @@ function BackToTop() {
   const scrollToTop = () => {
     const win = window as any;
     if (win.smoother) {
-      win.smoother.scrollTo("#hero", true);
+      win.smoother.scrollTo(0, true);
     } else {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -85,11 +85,11 @@ function BackToTop() {
       className={`
         fixed bottom-[30px] sm:bottom-[80px] right-[20px] sm:right-[65px] 
         w-[50px] sm:w-[60px] h-[50px] sm:h-[60px] 
-        bg-gradient-to-br from-[#F2F2F2] to-[#888888] 
+        bg-linear-to-br from-[#F2F2F2] to-background-end 
         text-[#0D0D0D] text-[20px] sm:text-[24px] 
         rounded-full flex items-center justify-center 
-        shadow-[0_4px_15px_rgba(0,0,0,0.2)] z-[3000] cursor-pointer
-        transition-all duration-400 ease-in-out
+        shadow-[0_4px_15px_rgba(0,0,0,0.2)] z-3000 cursor-pointer
+        transition-all duration-medium ease-in-out
         hover:scale-110 hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)]
         active:scale-90
         ${isVisible ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-5'}
