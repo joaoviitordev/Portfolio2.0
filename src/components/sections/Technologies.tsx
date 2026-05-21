@@ -1,15 +1,18 @@
 export default function Technologies() {
   const techs = [
-    { name: 'HTML5', icon: '/assets/icons/html5.svg', size: 'normal' },
-    { name: 'React', icon: '/assets/icons/react.svg', size: 'large' },
+    { name: 'HTML5', icon: '/assets/icons/html5.svg', size: 'wide' },
+    { name: 'React', icon: '/assets/icons/react.svg', size: 'wide' },
     { name: 'CSS3', icon: '/assets/icons/css3.svg', size: 'normal' },
     { name: 'JavaScript (ES6+)', icon: '/assets/icons/js.svg', size: 'wide' },
     { name: 'GSAP', icon: '/assets/icons/gsap2.svg', size: 'normal' },
-    { name: 'Figma', icon: '/assets/icons/figma.svg', size: 'tall' },
+    { name: 'Figma', icon: '/assets/icons/figma.svg', size: 'wide' },
     { name: 'Node.js', icon: '/assets/icons/nodejs2.svg', size: 'wide' },
     { name: 'Git', icon: '/assets/icons/git.svg', size: 'normal' },
     { name: 'GitHub', icon: '/assets/icons/github.svg', size: 'wide' },
-  ];
+    { name: 'Next.js', icon: '/assets/icons/nextjs.svg', size: 'wide' },
+    { name: 'TypeScript', icon: '/assets/icons/typescript.svg', size: 'tall' },
+    { name: 'PostgreSQL', icon: '/assets/icons/postgresql.svg', size: 'normal' },
+  ];  
 
   return (
     <section id="tecnologias" className="w-full min-h-auto sm:min-h-screen flex flex-col items-center px-[4vw] py-[40px] sm:py-[100px]">

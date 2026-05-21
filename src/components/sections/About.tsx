@@ -6,11 +6,10 @@ export default function About() {
       </h2>
       <article className="flex flex-col items-start">
         <p className="text-[6vw] sm:text-[3.5vw] lg:text-[2.4vw] font-bold text-primary leading-tight">
-          Sou desenvolvedor front-end focado em criar interfaces modernas e funcionais. Trabalho com atenção em detalhes de UI/UX, usabilidade e performance, entregando experiências digitais consistentes com animações via GSAP.
+          Sou desenvolvedor full-stack júnior focado em criar interfaces modernas e funcionais. Trabalho com atenção em detalhes de UI/UX, usabilidade e performance, entregando experiências digitais consistentes.
         </p>
         <p className="text-[4vw] sm:text-[2.5vw] lg:text-[1.8vw] text-text-light pt-[38px] pb-[36px] leading-snug">
-          Transformo ideias em soluções práticas, unindo código, design e boas práticas para construir
-          projetos eficientes e bem estruturados.
+          Transformo ideias em soluções práticas, unindo código, design e boas práticas para construir projetos eficientes e bem estruturados.
         </p>
         <button className="w-[140px] h-[50px] rounded-[30px] border-none bg-linear-to-br from-background-start to-background-end hover:translate-y-[-5%] transition-transform duration-500 ease-out">
           <a

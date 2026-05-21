@@ -94,6 +94,22 @@ export default function Projects() {
         { name: "Figma", icon: "/assets/icons/figma.svg" },
       ],
     },
+    {
+      title: "Stockly",
+      url: "https://stockly-seven-nu.vercel.app/",
+      repo: "https://github.com/joaoviitordev/stockly",
+      img: "/assets/images/stockly.webp",
+      description:
+        "Este projeto consiste em uma aplicação web completa para o controle de estoque e vendas, desenvolvida com o objetivo de aprender a criar soluções full stack robustas. O sistema permite o gerenciamento de produtos, registro de vendas e possui um painel de controle com gráficos de receita em tempo real.",
+      techs: [
+        { name: "Next.js", icon: "/assets/icons/nextjs.svg" },
+        { name: "React", icon: "/assets/icons/react.svg" },
+        { name: "Tailwind CSS", icon: "/assets/icons/tailwindcss.svg" },
+        { name: "Node.js", icon: "/assets/icons/nodejs2.svg" },
+        { name: "PostgreSQL", icon: "/assets/icons/postgresql.svg" },
+        { name: "Figma", icon: "/assets/icons/figma.svg" },
+      ],
+    },
   ];
 
   // Projeto ativo para o modal

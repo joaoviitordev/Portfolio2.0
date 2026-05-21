@@ -2,8 +2,8 @@ export default function Hero() {
   return (
     <section id="hero" className="w-full h-screen flex flex-col items-center justify-between">
       {/* H1 real escondido para SEO */}
-      <h1 className="sr-only">João Vitor | Desenvolvedor Front-end Next.js & UI/UX</h1>
-      
+      <h1 className="sr-only">João Vitor | Desenvolvedor Full-Stack & UI/UX</h1>
+
       {/* Container flex com width expandido para caber todo o texto do letreiro */}
       <div className="flex-1 overflow-hidden w-full flex items-center" aria-hidden="true">
         <div className="h-full w-max flex items-center justify-center">

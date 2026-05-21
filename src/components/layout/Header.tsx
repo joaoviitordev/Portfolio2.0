@@ -52,7 +52,7 @@ export default function Header() {
   return (
     <header className="w-full flex justify-between items-center px-[4vw] py-6 absolute z-50">
       <h2 className="font-mono font-bold text-2xl relative z-50">
-        /* DESENVOLVEDOR <br /> FRONT END */
+        /* DESENVOLVEDOR <br /> FULL STACK */
       </h2>
       
       <button 
