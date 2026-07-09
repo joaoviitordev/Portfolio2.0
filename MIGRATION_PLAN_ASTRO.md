@@ -115,7 +115,7 @@ cd astro-portfolio
 npm install
 npx astro add react tailwind sitemap vercel   # integrações + adapter Vercel
 npm i gsap                                     # GSAP completo (todos plugins grátis)
-npm i @fontsource-variable/poppins @fontsource/space-mono
+npm i @fontsource/poppins @fontsource/space-mono   # Poppins NÃO tem versão variável no Fontsource
 ```
 
 **Critério de pronto:** `npm run dev` sobe uma página em branco do Astro; `astro.config.mjs` já lista `react()`, `tailwind` (via Vite plugin no Tailwind v4), `sitemap()` e `adapter: vercel()`.
@@ -306,7 +306,7 @@ Não existe "Metadata API" no Astro — é HTML explícito, o que na prática é
 
 3. **Perda do modelo de estado global do React.** Hoje o `smoother` fica em `window.smoother` e o BackToTop lê dele. Isso continua funcionando em vanilla, mas se você tornar o modal uma island, lembre que **ilhas não compartilham estado entre si nem com o script global** — comunicação é via DOM/eventos/`window`, não via contexto React. Para seu caso (modal isolado) isso não é problema.
 
-4. **`next/font` → Fontsource: nomes das famílias.** Suas CSS vars (`--font-poppins`) precisam apontar pro nome exato que o Fontsource registra (ex: `"Poppins Variable"`), senão a fonte cai no fallback silenciosamente. Verifique visualmente.
+4. **`next/font` → Fontsource: nomes das famílias.** Suas CSS vars (`--font-poppins`) precisam apontar pro nome exato que o Fontsource registra — `"Poppins"` e `"Space Mono"` (já definidos no `@theme` do `global.css`), senão a fonte cai no fallback silenciosamente. Nota: **Poppins não tem versão variável** no Fontsource, então importa-se por peso (`@fontsource/poppins/400.css`, etc.), não `@fontsource-variable/*`.
 
 5. **O que NÃO vale migrar:**
    - O hack dos 4 `<Script>` de GSAP via CDN — **jogue fora**, use npm (plugins agora são grátis).
