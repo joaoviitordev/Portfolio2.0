@@ -1,0 +1,68 @@
+---
+// Header — marcação estática + toggle vanilla do menu mobile.
+// Fase 3 acrescenta: stagger GSAP dos links e pausar o ScrollSmoother com menu aberto.
+const links = [
+  { href: '#projetos', label: 'PROJETOS' },
+  { href: '#sobre', label: 'SOBRE' },
+  { href: '#tecnologias', label: 'TECNOLOGIAS' },
+  { href: '#contato', label: 'CONTATO' },
+];
+---
+
+<header class="w-full flex justify-between items-center px-[4vw] py-6 absolute z-50">
+  <h2 class="font-mono font-bold text-2xl relative z-50">
+    /* DESENVOLVEDOR <br /> FULL STACK */
+  </h2>
+
+  <button
+    id="menu-toggle"
+    class="block sm:hidden text-2xl text-[var(--color-primary)] bg-transparent border-none cursor-pointer relative z-50"
+    aria-label="Menu"
+    aria-expanded="false"
+    aria-controls="main-nav"
+  >
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+
+  <nav
+    id="main-nav"
+    data-open="false"
+    class="fixed inset-0 w-full h-screen bg-[#F2F2F2] bg-gradient-to-br from-[#F2F2F2] to-[#888888] z-40 transition-all duration-300 ease-in-out flex flex-col items-center justify-center invisible opacity-0 pointer-events-none data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto sm:static sm:w-auto sm:h-auto sm:bg-transparent sm:bg-none sm:z-auto sm:translate-y-0 sm:opacity-100 sm:visible sm:flex sm:pointer-events-auto"
+  >
+    <ul class="flex flex-col items-center justify-center gap-8 text-2xl sm:text-base sm:flex-row sm:gap-8 sm:p-0">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300"
+          >{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  const icon = toggle?.querySelector('i');
+
+  function setOpen(open: boolean) {
+    if (!nav || !toggle) return;
+    nav.dataset.open = String(open);
+    toggle.setAttribute('aria-expanded', String(open));
+    icon?.classList.toggle('fa-bars', !open);
+    icon?.classList.toggle('fa-times', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    // Fase 3: pausar/retomar o ScrollSmoother (window.smoother) aqui.
+  }
+
+  toggle?.addEventListener('click', () => {
+    setOpen(nav?.dataset.open !== 'true');
+  });
+
+  // Fecha ao clicar num link (navegação por âncora)
+  nav?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => setOpen(false))
+  );
+</script>

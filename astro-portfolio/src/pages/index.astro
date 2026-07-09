@@ -1,9 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Projects from '../components/sections/Projects.astro';
+import Technologies from '../components/sections/Technologies.astro';
+import Footer from '../components/layout/Footer.astro';
 ---
 
 <BaseLayout path="/">
-  <main class="min-h-screen flex items-center justify-center">
-    <h1 class="font-mono font-bold text-4xl">/* WIP: migração Astro — Fase 2 */</h1>
-  </main>
+  {/* Wrappers do ScrollSmoother — o smooth-scroll é ligado na Fase 3 (script vanilla). */}
+  <div id="smooth-wrapper" class="w-full overflow-hidden">
+    <div id="smooth-content" class="w-full">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Technologies />
+      </main>
+      <Footer />
+    </div>
+  </div>
 </BaseLayout>
