@@ -28,7 +28,7 @@
 
 html,
 body {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth removido — conflita com o ScrollSmoother do GSAP */
   overflow-x: hidden;
 }
 

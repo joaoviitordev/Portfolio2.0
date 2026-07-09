@@ -57,5 +57,6 @@ const modalProjects = projects.map(({ title, url, repo, description, techs }) =>
   </div>
 </section>
 
-{/* Island do modal — hidrata só quando a seção entra na viewport */}
-<ProjectsModal client:visible projects={modalProjects} />
+{/* Island do modal — renderiza null até abrir, então hidrata em idle
+    (client:visible não dispara de forma confiável num elemento de tamanho zero) */}
+<ProjectsModal client:idle projects={modalProjects} />

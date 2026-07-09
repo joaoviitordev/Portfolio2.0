@@ -11,7 +11,8 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 
 // ---------- ScrollSmoother ----------
 // Desligado para quem pediu menos movimento (acessibilidade).
-if (!prefersReduced) {
+function initSmoother() {
+  if (prefersReduced) return;
   window.smoother = ScrollSmoother.create({
     wrapper: '#smooth-wrapper',
     content: '#smooth-content',
@@ -19,6 +20,17 @@ if (!prefersReduced) {
     effects: true,
     smoothTouch: 0.1,
   });
+  ScrollTrigger.refresh();
+}
+
+// Cria após o load para medir a altura real do conteúdo (imagens já reservaram espaço).
+// TODO(scroll): o smooth-scroll do ScrollSmoother ainda não está surtindo efeito nesta
+// migração — o restante do GSAP (preloader, stagger, ScrollTrigger do back-to-top) funciona.
+// A rolagem nativa segue normal, então não é bloqueante. Revisar numa próxima iteração.
+if (document.readyState === 'complete') {
+  initSmoother();
+} else {
+  window.addEventListener('load', initSmoother, { once: true });
 }
 
 // ---------- Back to Top ----------
