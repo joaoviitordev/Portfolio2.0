@@ -1,6 +1,5 @@
 ---
-// Header — marcação estática + toggle vanilla do menu mobile.
-// Fase 3 acrescenta: stagger GSAP dos links e pausar o ScrollSmoother com menu aberto.
+// Header — marcação estática + toggle vanilla do menu mobile (com stagger GSAP dos links).
 const links = [
   { href: '#projetos', label: 'PROJETOS' },
   { href: '#sobre', label: 'SOBRE' },
@@ -56,9 +55,6 @@ const links = [
     icon?.classList.toggle('fa-bars', !open);
     icon?.classList.toggle('fa-times', open);
     document.body.style.overflow = open ? 'hidden' : '';
-
-    // Pausa o ScrollSmoother enquanto o menu está aberto (definido em gsap-init.ts)
-    window.smoother?.paused(open);
 
     // Stagger dos links ao abrir no mobile
     if (open && window.innerWidth <= 440) {

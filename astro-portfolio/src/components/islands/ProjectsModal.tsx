@@ -51,15 +51,9 @@ export default function ProjectsModal({ projects }: Props) {
     return () => handlers.forEach(({ btn, handler }) => btn.removeEventListener('click', handler));
   }, []);
 
-  // Trava o scroll do body, pausa o ScrollSmoother e fecha no Esc
+  // Trava o scroll do body e fecha no Esc
   useEffect(() => {
-    if (activeIdx !== null) {
-      document.body.style.overflow = 'hidden';
-      window.smoother?.paused(true);
-    } else {
-      document.body.style.overflow = '';
-      window.smoother?.paused(false);
-    }
+    document.body.style.overflow = activeIdx !== null ? 'hidden' : '';
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') handleClose();
     };
@@ -67,7 +61,6 @@ export default function ProjectsModal({ projects }: Props) {
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
-      window.smoother?.paused(false);
     };
   }, [activeIdx, handleClose]);
 

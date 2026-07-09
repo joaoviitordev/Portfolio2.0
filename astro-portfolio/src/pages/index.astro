@@ -17,19 +17,14 @@ import Footer from '../components/layout/Footer.astro';
     <span id="preloader-count" class="font-mono text-4xl sm:text-9xl text-[#F2F2F2] font-bold">0%</span>
   </div>
 
-  {/* Wrappers do ScrollSmoother */}
-  <div id="smooth-wrapper" class="w-full overflow-hidden">
-    <div id="smooth-content" class="w-full">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Technologies />
-      </main>
-      <Footer />
-    </div>
-  </div>
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Projects />
+    <Technologies />
+  </main>
+  <Footer />
 
   {/* Back to top — visibilidade controlada por ScrollTrigger (gsap-init.ts) */}
   <button

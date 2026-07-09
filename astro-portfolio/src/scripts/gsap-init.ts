@@ -1,37 +1,10 @@
 // GSAP global — vanilla, sem React (substitui o useGSAP do page.tsx/Preloader.tsx).
-// Plugins agora são gratuitos (GSAP 3.13+), então importamos via npm, sem CDN.
+// ScrollSmoother foi removido (não agregava e pesava ~125kB de JS); usamos rolagem
+// nativa. Mantemos gsap + ScrollTrigger para o Preloader, o BackToTop e o stagger.
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-// window.smoother é tipado globalmente em src/env.d.ts
-
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// ---------- ScrollSmoother ----------
-// Desligado para quem pediu menos movimento (acessibilidade).
-function initSmoother() {
-  if (prefersReduced) return;
-  window.smoother = ScrollSmoother.create({
-    wrapper: '#smooth-wrapper',
-    content: '#smooth-content',
-    smooth: 1.5,
-    effects: true,
-    smoothTouch: 0.1,
-  });
-  ScrollTrigger.refresh();
-}
-
-// Cria após o load para medir a altura real do conteúdo (imagens já reservaram espaço).
-// TODO(scroll): o smooth-scroll do ScrollSmoother ainda não está surtindo efeito nesta
-// migração — o restante do GSAP (preloader, stagger, ScrollTrigger do back-to-top) funciona.
-// A rolagem nativa segue normal, então não é bloqueante. Revisar numa próxima iteração.
-if (document.readyState === 'complete') {
-  initSmoother();
-} else {
-  window.addEventListener('load', initSmoother, { once: true });
-}
+gsap.registerPlugin(ScrollTrigger);
 
 // ---------- Back to Top ----------
 const backToTop = document.getElementById('backToTop');
@@ -45,11 +18,7 @@ if (backToTop) {
   });
 
   backToTop.addEventListener('click', () => {
-    if (window.smoother) {
-      window.smoother.scrollTo(0, true);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
