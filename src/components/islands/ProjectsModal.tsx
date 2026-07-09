@@ -92,7 +92,7 @@ export default function ProjectsModal({ projects }: Props) {
               alt={tech.name}
               width={20}
               height={20}
-              className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] object-contain"
+              className="w-4.5 h-4.5 sm:w-5 sm:h-5 object-contain"
             />
             <span className="font-sans text-xs sm:text-sm text-primary font-medium">
               {tech.name}
@@ -101,7 +101,7 @@ export default function ProjectsModal({ projects }: Props) {
         ))}
       </div>
 
-      <div className="w-12 h-[2px] bg-primary opacity-30 mb-5" />
+      <div className="w-12 h-0.5 bg-primary opacity-30 mb-5" />
 
       <p className="font-sans text-sm sm:text-base text-text-light leading-relaxed mb-8">
         {proj.description}
@@ -140,12 +140,12 @@ export default function ProjectsModal({ projects }: Props) {
     <>
       {/* Mobile: fullscreen */}
       <div
-        className={`fixed inset-0 z-[9999] w-full h-screen bg-[#F2F2F2] bg-linear-to-br from-[#F2F2F2] to-background-end flex flex-col items-center justify-center sm:hidden ${
+        className={`fixed inset-0 z-9999 w-full h-screen bg-background-start bg-linear-to-br from-background-start to-background-end flex flex-col items-center justify-center sm:hidden ${
           modalIsClosing ? 'modal-backdrop-exit' : 'modal-backdrop-enter'
         }`}
       >
         <div
-          className={`relative w-[88%] max-h-[85vh] overflow-y-auto rounded-[24px] p-6 ${
+          className={`relative w-[88%] max-h-[85vh] overflow-y-auto rounded-3xl p-6 ${
             modalIsClosing ? 'modal-content-exit' : 'modal-content-enter'
           }`}
         >
@@ -155,14 +155,14 @@ export default function ProjectsModal({ projects }: Props) {
 
       {/* Desktop: overlay centralizado */}
       <div
-        className={`hidden sm:flex fixed inset-0 z-[9999] items-center justify-center p-4 ${
+        className={`hidden sm:flex fixed inset-0 z-9999 items-center justify-center p-4 ${
           modalIsClosing ? 'modal-backdrop-exit' : 'modal-backdrop-enter'
         }`}
         onClick={handleClose}
       >
         <div className="absolute inset-0 bg-black/55 backdrop-blur-sm" />
         <div
-          className={`relative w-full max-w-[480px] rounded-[24px] p-8 shadow-[0_25px_80px_rgba(0,0,0,0.5)] ${
+          className={`relative w-full max-w-120 rounded-3xl p-8 shadow-[0_25px_80px_rgba(0,0,0,0.5)] ${
             modalIsClosing ? 'modal-content-exit' : 'modal-content-enter'
           }`}
           style={{

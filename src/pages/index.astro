@@ -13,9 +13,9 @@ import Icon from '../components/ui/Icon.astro';
   {/* Preloader — some via GSAP (gsap-init.ts) */}
   <div
     id="preloader"
-    class="fixed inset-0 z-[9999] bg-[#0D0D0D] flex items-center justify-center pointer-events-none"
+    class="fixed inset-0 z-9999 bg-primary flex items-center justify-center pointer-events-none"
   >
-    <span id="preloader-count" class="font-mono text-4xl sm:text-9xl text-[#F2F2F2] font-bold">0%</span>
+    <span id="preloader-count" class="font-mono text-4xl sm:text-9xl text-background-start font-bold">0%</span>
   </div>
 
   <Header />
@@ -31,7 +31,7 @@ import Icon from '../components/ui/Icon.astro';
   <button
     id="backToTop"
     aria-label="Voltar ao topo"
-    class="fixed bottom-[30px] sm:bottom-[80px] right-[20px] sm:right-[65px] w-[50px] sm:w-[60px] h-[50px] sm:h-[60px] bg-linear-to-br from-[#F2F2F2] to-background-end text-[#0D0D0D] rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.2)] z-[3000] cursor-pointer transition-all duration-medium ease-in-out hover:scale-110 hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] active:scale-90 opacity-0 invisible translate-y-5"
+    class="fixed bottom-7.5 sm:bottom-20 right-5 sm:right-16.25 w-12.5 sm:w-15 h-12.5 sm:h-15 bg-linear-to-br from-background-start to-background-end text-primary rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.2)] z-3000 cursor-pointer transition-all duration-medium ease-in-out hover:scale-110 hover:shadow-[0_6px_20px_rgba(0,0,0,0.3)] active:scale-90 opacity-0 invisible translate-y-5"
   >
     <Icon name="arrow-up" class="w-5 h-5 sm:w-6 sm:h-6" />
   </button>

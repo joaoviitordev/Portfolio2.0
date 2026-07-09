@@ -18,18 +18,18 @@ const techs = [
 function classesFor(size: string) {
   let colSpan = 'col-span-1';
   let rowSpan = 'row-span-1';
-  let iconSize = 'w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] lg:w-[80px] lg:h-[80px]';
-  let textSize = 'text-[16px] sm:text-[18px] lg:text-[20px]';
+  let iconSize = 'w-15 h-15 sm:w-17.5 sm:h-17.5 lg:w-20 lg:h-20';
+  let textSize = 'text-base sm:text-lg lg:text-xl';
 
   if (size === 'large') {
     colSpan = 'col-span-2';
     rowSpan = 'row-span-1 sm:row-span-2';
-    iconSize = 'w-[70px] h-[70px] sm:w-[100px] sm:h-[100px] lg:w-[140px] lg:h-[140px]';
-    textSize = 'text-[18px] sm:text-[22px] lg:text-[26px]';
+    iconSize = 'w-17.5 h-17.5 sm:w-25 sm:h-25 lg:w-35 lg:h-35';
+    textSize = 'text-lg sm:text-[22px] lg:text-[26px]';
   } else if (size === 'tall') {
     rowSpan = 'row-span-2';
-    iconSize = 'w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] lg:w-[100px] lg:h-[100px]';
-    textSize = 'text-[18px] sm:text-[20px] lg:text-[22px]';
+    iconSize = 'w-17.5 h-17.5 sm:w-20 sm:h-20 lg:w-25 lg:h-25';
+    textSize = 'text-lg sm:text-xl lg:text-[22px]';
   } else if (size === 'wide') {
     colSpan = 'col-span-2';
   }
@@ -37,17 +37,17 @@ function classesFor(size: string) {
 }
 ---
 
-<section id="tecnologias" class="w-full min-h-auto sm:min-h-screen flex flex-col items-center px-[4vw] py-[40px] sm:py-[100px]">
-  <h2 class="font-mono text-[var(--color-primary)] text-xl sm:text-2xl font-bold w-full text-left mb-[32px] sm:mb-[48px]">
+<section id="tecnologias" class="w-full min-h-auto sm:min-h-screen flex flex-col items-center px-[4vw] py-10 sm:py-25">
+  <h2 class="font-mono text-primary text-xl sm:text-2xl font-bold w-full text-left mb-8 sm:mb-12">
     /* TECNOLOGIAS */
   </h2>
 
-  <div class="w-full max-w-[1100px] grid grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-4 sm:gap-6 auto-rows-[150px] sm:auto-rows-[200px] lg:auto-rows-[240px]">
+  <div class="w-full max-w-275 grid grid-cols-2 lg:grid-cols-4 grid-flow-dense gap-4 sm:gap-6 auto-rows-37.5 sm:auto-rows-50 lg:auto-rows-60">
     {techs.map((tech) => {
       const { colSpan, rowSpan, iconSize, textSize } = classesFor(tech.size);
       return (
         <div
-          class={`flex flex-col items-center justify-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-[16px] sm:rounded-[24px] bg-white/40 backdrop-blur-md border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 ease-in hover:-translate-y-2 hover:bg-white/60 hover:shadow-[0_15px_35px_rgba(0,0,0,0.1)] ${colSpan} ${rowSpan}`}
+          class={`flex flex-col items-center justify-center gap-4 sm:gap-6 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/40 backdrop-blur-md border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-300 ease-in hover:-translate-y-2 hover:bg-white/60 hover:shadow-[0_15px_35px_rgba(0,0,0,0.1)] ${colSpan} ${rowSpan}`}
         >
           <img
             src={tech.icon}
@@ -55,7 +55,7 @@ function classesFor(size: string) {
             loading="lazy"
             class={`${iconSize} object-contain drop-shadow-md`}
           />
-          <span class={`font-sans font-semibold text-[#0D0D0D] text-center ${textSize}`}>
+          <span class={`font-sans font-semibold text-primary text-center ${textSize}`}>
             {tech.name}
           </span>
         </div>
