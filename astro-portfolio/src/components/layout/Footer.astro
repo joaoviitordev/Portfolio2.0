@@ -1,5 +1,6 @@
 ---
 // Footer / seção de contato — estático. Marquee CSS puro.
+import Icon from '../ui/Icon.astro';
 ---
 
 <div class="w-full overflow-hidden">
@@ -25,11 +26,11 @@
       </div>
 
       <div class="px-[3.4vw] mb-4 sm:mb-5 flex gap-4 items-start sm:items-center">
-        <a href="https://www.linkedin.com/in/joaovitor-faria/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn" class="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-primary hover:text-transparent hover:bg-clip-text hover:bg-(image:--color-link-hover) transition-all duration-300">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        <a href="https://www.linkedin.com/in/joaovitor-faria/" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no LinkedIn" class="w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-primary hover:text-[#8a8a8a] transition-colors duration-300">
+          <Icon name="linkedin" class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
         </a>
-        <a href="https://github.com/joaoviitordev" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no GitHub" class="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-primary hover:text-transparent hover:bg-clip-text hover:bg-(image:--color-link-hover) transition-all duration-300">
-          <i class="fab fa-github" aria-hidden="true"></i>
+        <a href="https://github.com/joaoviitordev" target="_blank" rel="noopener noreferrer" aria-label="Acesse meu perfil no GitHub" class="w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-primary hover:text-[#8a8a8a] transition-colors duration-300">
+          <Icon name="github" class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
         </a>
       </div>
 

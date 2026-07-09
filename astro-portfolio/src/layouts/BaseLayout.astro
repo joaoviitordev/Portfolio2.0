@@ -30,9 +30,6 @@ const { title, description, path } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon/myfavicon.svg" />
 
     <SEO title={title} description={description} path={path} />
-
-    <!-- FontAwesome kit (mantido via CDN na Fase 1/2; candidato a inline na Fase 5) -->
-    <script src="https://kit.fontawesome.com/48fc6e8f37.js" crossorigin="anonymous" is:inline></script>
   </head>
   <body>
     <slot />

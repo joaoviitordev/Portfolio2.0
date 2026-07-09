@@ -1,5 +1,6 @@
 ---
 // Hero — estático. O marquee é 100% CSS (animate-[marquee-anim...]).
+import Icon from '../ui/Icon.astro';
 ---
 
 <section id="hero" class="w-full h-screen flex flex-col items-center justify-between">
@@ -16,24 +17,24 @@
   </div>
 
   <div class="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between px-[4vw] pb-[24px] sm:pb-0 sm:-translate-y-1/2 gap-[14px] sm:gap-0">
-    <div class="flex gap-4 items-start sm:items-center">
+    <div class="flex gap-4 items-center">
       <a
         href="https://www.linkedin.com/in/joaovitor-faria/"
         target="_blank"
         rel="nofollow noreferrer"
         aria-label="Acesse meu perfil no LinkedIn"
-        class="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300"
+        class="w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-[#8a8a8a] transition-colors duration-300"
       >
-        <i class="fab fa-linkedin" aria-hidden="true"></i>
+        <Icon name="linkedin" class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
       </a>
       <a
         href="https://github.com/joaoviitordev"
         target="_blank"
         rel="nofollow noreferrer"
         aria-label="Acesse meu perfil no GitHub"
-        class="text-[28px] sm:text-[32px] w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300"
+        class="w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-[#8a8a8a] transition-colors duration-300"
       >
-        <i class="fab fa-github" aria-hidden="true"></i>
+        <Icon name="github" class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
       </a>
     </div>
     <h3 class="font-mono font-bold text-lg text-base sm:text-xl w-full sm:w-auto">/* WEB DEVELOPER - UI | UX */</h3>
