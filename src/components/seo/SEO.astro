@@ -1,0 +1,41 @@
+---
+// Metadata centralizada (equivale ao `export const metadata` do layout.tsx do Next).
+// No Astro não há Metadata API — é HTML explícito.
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  /** Caminho relativo da rota atual, ex: "/" ou "/blog". Vira canonical absoluto. */
+  path?: string;
+}
+
+const {
+  title = "João Vitor | Desenvolvedor Full-Stack & UI/UX",
+  description = "Desenvolvedor Full-Stack especializado em HTML, CSS, JS, React, Next.js, Tailwind, GSAP e UI/UX. Transformo designs complexos em interfaces web de alta performance. Veja meus cases.",
+  image = "/og-image.png",
+  path = "/",
+} = Astro.props;
+
+// Astro.site vem do `site` no astro.config.mjs
+const canonical = new URL(path, Astro.site).href;
+const ogImage = new URL(image, Astro.site).href;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="João Vitor Portfólio" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />

@@ -1,0 +1,80 @@
+---
+// Header — marcação estática + toggle vanilla do menu mobile (com stagger GSAP dos links).
+import Icon from '../ui/Icon.astro';
+const links = [
+  { href: '#projetos', label: 'PROJETOS' },
+  { href: '#sobre', label: 'SOBRE' },
+  { href: '#tecnologias', label: 'TECNOLOGIAS' },
+  { href: '#contato', label: 'CONTATO' },
+];
+---
+
+<header class="w-full flex justify-between items-center px-[4vw] py-6 absolute z-50">
+  <h2 class="font-mono font-bold text-2xl relative z-50">
+    /* DESENVOLVEDOR <br /> FULL STACK */
+  </h2>
+
+  <button
+    id="menu-toggle"
+    class="block sm:hidden text-2xl text-primary bg-transparent border-none cursor-pointer relative z-50"
+    aria-label="Menu"
+    aria-expanded="false"
+    aria-controls="main-nav"
+  >
+    <Icon name="bars" data-icon="bars" class="w-6 h-6" />
+    <Icon name="close" data-icon="close" class="w-6 h-6 hidden" />
+  </button>
+
+  <nav
+    id="main-nav"
+    data-open="false"
+    class="fixed inset-0 w-full h-screen bg-[#F2F2F2] bg-gradient-to-br from-[#F2F2F2] to-[#888888] z-40 transition-all duration-300 ease-in-out flex flex-col items-center justify-center invisible opacity-0 pointer-events-none data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto sm:static sm:w-auto sm:h-auto sm:bg-transparent sm:bg-none sm:z-auto sm:translate-y-0 sm:opacity-100 sm:visible sm:flex sm:pointer-events-auto"
+  >
+    <ul class="flex flex-col items-center justify-center gap-8 text-2xl sm:text-base sm:flex-row sm:gap-8 sm:p-0">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-(image:--color-link-hover) transition-all duration-300"
+          >{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  import gsap from 'gsap';
+
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+  const barsIcon = toggle?.querySelector('[data-icon="bars"]');
+  const closeIcon = toggle?.querySelector('[data-icon="close"]');
+
+  function setOpen(open: boolean) {
+    if (!nav || !toggle) return;
+    nav.dataset.open = String(open);
+    toggle.setAttribute('aria-expanded', String(open));
+    barsIcon?.classList.toggle('hidden', open);
+    closeIcon?.classList.toggle('hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
+
+    // Stagger dos links ao abrir no mobile
+    if (open && window.innerWidth <= 440) {
+      gsap.fromTo(
+        '.header-link',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power3.out', delay: 0.2 }
+      );
+    }
+  }
+
+  toggle?.addEventListener('click', () => {
+    setOpen(nav?.dataset.open !== 'true');
+  });
+
+  // Fecha ao clicar num link (navegação por âncora)
+  nav?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => setOpen(false))
+  );
+</script>

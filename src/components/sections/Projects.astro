@@ -1,0 +1,62 @@
+---
+// Projetos — cards estáticos. O modal "Saiba mais" vira island React na Fase 3
+// (o botão já expõe data-project-index pra ela engatar).
+import { Image } from 'astro:assets';
+import { projects } from '../../data/projects';
+import ProjectsModal from '../islands/ProjectsModal.tsx';
+
+// Dados leves p/ a island (o modal não usa a imagem — só título, techs, textos e links)
+const modalProjects = projects.map(({ title, url, repo, description, techs }) => ({
+  title,
+  url,
+  repo,
+  description,
+  techs,
+}));
+---
+
+<section id="projetos" class="w-full min-h-screen flex flex-col items-center px-[4vw] py-[24px] sm:py-0">
+  <h2 class="font-mono text-primary text-xl sm:text-2xl font-bold w-full text-left mt-0 sm:mt-[24px]">
+    /* PROJETOS */
+  </h2>
+
+  <div class="w-full max-w-[1100px] mt-6 sm:mt-16 flex flex-col gap-6 sm:gap-16">
+    {projects.map((proj, idx) => (
+      <article class="relative w-full rounded-[24px] shadow-[0_20px_70px_rgba(0,0,0,0.35)] bg-white/5 overflow-hidden transition-all duration-medium ease-in hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
+        <div class="w-full flex items-center justify-between p-4 sm:px-6 sm:py-5">
+          <h3 class="font-sans text-base sm:text-xl text-primary font-medium m-0 p-0">
+            {proj.title}
+          </h3>
+          <button
+            type="button"
+            data-project-index={idx}
+            class="project-open font-mono text-sm sm:text-base text-primary font-bold cursor-pointer bg-transparent border-none relative group flex items-center gap-1"
+          >
+            <span class="relative after:content-[''] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
+              Saiba mais
+            </span>
+            <span class="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
+        </div>
+
+        {/* Texto descritivo para SEO — oculto visualmente, lido por robôs */}
+        <p class="sr-only">{proj.description}</p>
+
+        <div class="relative w-full h-[220px] sm:h-[450px] lg:h-[600px] overflow-hidden">
+          <Image
+            src={proj.img}
+            alt={`Captura de tela do projeto ${proj.title}`}
+            widths={[640, 1024, 1100]}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1100px"
+            loading={idx === 0 ? 'eager' : 'lazy'}
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+{/* Island do modal — renderiza null até abrir, então hidrata em idle
+    (client:visible não dispara de forma confiável num elemento de tamanho zero) */}
+<ProjectsModal client:idle projects={modalProjects} />

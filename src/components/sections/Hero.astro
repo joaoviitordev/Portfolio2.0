@@ -1,0 +1,42 @@
+---
+// Hero — estático. O marquee é 100% CSS (animate-[marquee-anim...]).
+import Icon from '../ui/Icon.astro';
+---
+
+<section id="hero" class="w-full h-screen flex flex-col items-center justify-between">
+  {/* H1 real escondido para SEO */}
+  <h1 class="sr-only">João Vitor | Desenvolvedor Full-Stack & UI/UX</h1>
+
+  {/* Container flex com width expandido para caber todo o texto do letreiro */}
+  <div class="flex-1 overflow-hidden w-full flex items-center" aria-hidden="true">
+    <div class="h-full w-max flex items-center justify-center">
+      <div class="animate-[marquee-anim_20s_infinite_linear] font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</div>
+      <div class="animate-[marquee-anim_20s_infinite_linear] font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</div>
+      <div class="animate-[marquee-anim_20s_infinite_linear] font-mono font-bold pl-[20px] sm:pl-[100px] text-[16vw] sm:text-[12vw] whitespace-nowrap">JOÃO VITOR GOMES DE FARIA</div>
+    </div>
+  </div>
+
+  <div class="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between px-[4vw] pb-[24px] sm:pb-0 sm:-translate-y-1/2 gap-[14px] sm:gap-0">
+    <div class="flex gap-4 items-center">
+      <a
+        href="https://www.linkedin.com/in/joaovitor-faria/"
+        target="_blank"
+        rel="nofollow noreferrer"
+        aria-label="Acesse meu perfil no LinkedIn"
+        class="w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-[#8a8a8a] transition-colors duration-300"
+      >
+        <Icon name="linkedin" class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
+      </a>
+      <a
+        href="https://github.com/joaoviitordev"
+        target="_blank"
+        rel="nofollow noreferrer"
+        aria-label="Acesse meu perfil no GitHub"
+        class="w-[28px] sm:w-[32px] h-[28px] sm:h-[32px] flex items-center justify-center text-[var(--color-primary)] hover:text-[#8a8a8a] transition-colors duration-300"
+      >
+        <Icon name="github" class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px]" />
+      </a>
+    </div>
+    <h3 class="font-mono font-bold text-lg text-base sm:text-xl w-full sm:w-auto">/* WEB DEVELOPER - UI | UX */</h3>
+  </div>
+</section>

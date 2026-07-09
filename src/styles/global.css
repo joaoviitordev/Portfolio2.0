@@ -7,6 +7,10 @@
   --color-text-light: #535353;
   --color-link-hover: linear-gradient(-30deg, var(--color-background-start), #b6b6b6);
 
+  /* Fontsource registra estas famílias (antes vinham do next/font como CSS vars) */
+  --font-poppins: "Poppins";
+  --font-space-mono: "Space Mono";
+
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
@@ -24,7 +28,7 @@
 
 html,
 body {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth removido — conflita com o ScrollSmoother do GSAP */
   overflow-x: hidden;
 }
 
@@ -88,4 +92,3 @@ body {
 .modal-content-exit {
   animation: modalOut 0.3s ease-in forwards;
 }
-
