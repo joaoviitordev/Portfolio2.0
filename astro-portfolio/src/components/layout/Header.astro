@@ -43,6 +43,8 @@ const links = [
 </header>
 
 <script>
+  import gsap from 'gsap';
+
   const toggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('main-nav');
   const icon = toggle?.querySelector('i');
@@ -54,7 +56,18 @@ const links = [
     icon?.classList.toggle('fa-bars', !open);
     icon?.classList.toggle('fa-times', open);
     document.body.style.overflow = open ? 'hidden' : '';
-    // Fase 3: pausar/retomar o ScrollSmoother (window.smoother) aqui.
+
+    // Pausa o ScrollSmoother enquanto o menu está aberto (definido em gsap-init.ts)
+    window.smoother?.paused(open);
+
+    // Stagger dos links ao abrir no mobile
+    if (open && window.innerWidth <= 440) {
+      gsap.fromTo(
+        '.header-link',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power3.out', delay: 0.2 }
+      );
+    }
   }
 
   toggle?.addEventListener('click', () => {

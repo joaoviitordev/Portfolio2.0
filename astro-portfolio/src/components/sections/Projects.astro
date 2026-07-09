@@ -3,6 +3,16 @@
 // (o botão já expõe data-project-index pra ela engatar).
 import { Image } from 'astro:assets';
 import { projects } from '../../data/projects';
+import ProjectsModal from '../islands/ProjectsModal.tsx';
+
+// Dados leves p/ a island (o modal não usa a imagem — só título, techs, textos e links)
+const modalProjects = projects.map(({ title, url, repo, description, techs }) => ({
+  title,
+  url,
+  repo,
+  description,
+  techs,
+}));
 ---
 
 <section id="projetos" class="w-full min-h-screen flex flex-col items-center px-[4vw] py-[24px] sm:py-0">
@@ -46,3 +56,6 @@ import { projects } from '../../data/projects';
     ))}
   </div>
 </section>
+
+{/* Island do modal — hidrata só quando a seção entra na viewport */}
+<ProjectsModal client:visible projects={modalProjects} />
