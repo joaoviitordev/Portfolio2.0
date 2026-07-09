@@ -16,7 +16,7 @@ const links = [
 
   <button
     id="menu-toggle"
-    class="block sm:hidden text-2xl text-[var(--color-primary)] bg-transparent border-none cursor-pointer relative z-50"
+    class="block sm:hidden text-2xl text-primary bg-transparent border-none cursor-pointer relative z-50"
     aria-label="Menu"
     aria-expanded="false"
     aria-controls="main-nav"
@@ -35,7 +35,7 @@ const links = [
         <li>
           <a
             href={link.href}
-            class="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-[image:var(--color-link-hover)] transition-all duration-300"
+            class="header-link font-medium hover:text-transparent hover:bg-clip-text hover:bg-(image:--color-link-hover) transition-all duration-300"
           >{link.label}</a>
         </li>
       ))}
